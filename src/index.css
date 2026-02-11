@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #1E40AF;
+  /* Royal Blue */
+  --color-secondary: #3B82F6;
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-display: 'Poppins', sans-serif;
+
+  /* Premium 2026 Animations */
+  @keyframes float-slow {
+
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(-15px);
+    }
+  }
+
+  --animate-float-slow: float-slow 6s ease-in-out infinite;
+}
+
+/* 2026 Glassmorphism Utilities */
+.glass-panel {
+  @apply bg-white/70 backdrop-blur-xl border border-white/50;
+  box-shadow:
+    0 4px 6px -1px rgba(30, 64, 175, 0.05),
+    0 20px 40px -12px rgba(30, 64, 175, 0.1);
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-900 to-blue-600;
+}
+
+/* Custom Shape Utility */
+.shape-bg {
+  position: absolute;
+  z-index: -1;
+  opacity: 0.1;
+  border-radius: 12px;
+}
+
+/* 2026 Tactile Glass Hover State */
+.card-premium-hover {
+  @apply transition-all duration-500 ease-out;
+  @apply bg-white/60 backdrop-blur-md border border-white/40;
+}
+
+.card-premium-hover:hover {
+  @apply -translate-y-2 scale-[1.02];
+  /* Subtle lift & scale */
+  @apply bg-white/90 border-blue-200/50;
+  /* Light up the glass */
+  /* The "2026 Glow" - A double-layer shadow */
+  box-shadow:
+    0 20px 40px -12px rgba(59, 130, 246, 0.15),
+    /* Soft blue glow */
+    0 0 0 1px rgba(59, 130, 246, 0.1);
+  /* Crisp border highlight */
+}
