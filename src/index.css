@@ -6,28 +6,25 @@
   --color-secondary: #3B82F6;
   --font-sans: 'Inter', system-ui, sans-serif;
   --font-display: 'Poppins', sans-serif;
-  font-display: swap;
+
+  --animate-float-slow: float-slow 6s ease-in-out infinite;
+
+  @keyframes float-slow {
+
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(-15px);
+    }
+  }
 }
 
 body {
   overflow-x: hidden;
   width: 100%;
-}
-
-/* Premium 2026 Animations */
-@keyframes float-slow {
-
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-
-  50% {
-    transform: translateY(-15px);
-  }
-}
-
---animate-float-slow: float-slow 6s ease-in-out infinite;
 }
 
 /* 2026 Glassmorphism Utilities */
