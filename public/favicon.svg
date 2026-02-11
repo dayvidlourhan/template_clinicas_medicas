@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <title>MedCare Logo</title>
+  <defs>
+    <!-- Premium Royal Blue Gradient -->
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E40AF" /> <!-- Royal Blue -->
+      <stop offset="100%" stop-color="#3B82F6" /> <!-- Blue 500 -->
+    </linearGradient>
+
+    <!-- Glass Shine -->
+    <linearGradient id="shine" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="white" stop-opacity="0.3" />
+      <stop offset="50%" stop-color="white" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Drop Shadow (adjusted to prevent clipping) -->
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <!-- Background with Shadow: Slightly smaller to fit shadow in 64x64 -->
+  <rect x="4" y="4" width="56" height="56" rx="14" fill="url(#g1)" filter="url(#shadow)" />
+
+  <!-- Glass Shine Overlay -->
+  <rect x="4" y="4" width="56" height="56" rx="14" fill="url(#shine)" pointer-events="none" />
+
+  <!-- Medical Cross: Centered at 32,32 -->
+  <!-- Thickness 12, Length 32 -->
+  <!-- Vertical: x=26, y=16, w=12, h=32 -->
+  <!-- Horizontal: x=16, y=26, w=32, h=12 -->
+  <g fill="white">
+     <rect x="26" y="16" width="12" height="32" rx="4" />
+     <rect x="16" y="26" width="32" height="12" rx="4" />
+  </g>
+</svg>
