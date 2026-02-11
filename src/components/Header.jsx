@@ -33,12 +33,8 @@ const Header = () => {
             {/* Main Navbar */}
             <div className="container mx-auto px-6 lg:px-12 h-20 flex justify-between items-center">
                 {/* Logo */}
-                <div className="flex items-center gap-2">
-                    <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center text-primary">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
-                            <path d="M12 6v12m-6-6h12" />
-                        </svg>
-                    </div>
+                <div className="flex items-center gap-3">
+                    <img src="/favicon.svg" alt="MedCare Logo" className="w-12 h-12 object-contain" />
                     <span className="text-2xl font-display font-bold text-gray-900 tracking-tight">
                         Med<span className="text-primary">Care</span>
                     </span>
