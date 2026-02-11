@@ -33,7 +33,7 @@ const Testimonials = () => {
                     <h2 className="text-3xl md:text-4xl font-bold text-[#1E3A8A] mb-4">
                         Depoimentos
                     </h2>
-                    <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                    <p className="text-lg text-gray-700 max-w-2xl mx-auto">
                         O que dizem sobre nós
                     </p>
                 </div>
@@ -58,7 +58,7 @@ const Testimonials = () => {
                             </div>
 
                             {/* Text Content - Flex grow ensures footer aligns at bottom */}
-                            <blockquote className="text-gray-600 mb-8 flex-grow leading-relaxed">
+                            <blockquote className="text-gray-700 mb-8 flex-grow leading-relaxed">
                                 "{testimonial.text}"
                             </blockquote>
 

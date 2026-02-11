@@ -21,7 +21,7 @@ const Specialties = () => {
                     <h2 className="text-3xl lg:text-4xl font-display font-bold text-gray-900">
                         Especialidades Médicas
                     </h2>
-                    <p className="text-lg text-gray-600">
+                    <p className="text-lg text-gray-700">
                         Tudo o que você precisa em um só lugar.
                     </p>
                 </div>
@@ -53,7 +53,7 @@ const Specialties = () => {
 
                 {/* Bottom CTA */}
                 <div className="mt-16">
-                    <button className="inline-flex items-center gap-2 px-8 py-4 rounded-full border-2 border-primary text-primary font-semibold hover:bg-primary hover:text-white transition-all duration-300 transform hover:scale-105">
+                    <button aria-label="Ver todas as especialidades médicas" className="inline-flex items-center gap-2 px-8 py-4 rounded-full border-2 border-primary text-primary font-semibold hover:bg-primary hover:text-white transition-all duration-300 transform hover:scale-105">
                         Ver todas as especialidades
                         <ArrowRight size={18} />
                     </button>

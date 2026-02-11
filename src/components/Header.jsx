@@ -65,7 +65,8 @@ const Header = () => {
                 <div className="md:hidden">
                     <button
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
-                        className="p-2 text-gray-600 hover:bg-gray-100 rounded-lg transition-colors"
+                        className="p-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
+                        aria-label={isMenuOpen ? "Fechar Menu" : "Abrir Menu"}
                     >
                         {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
                     </button>
@@ -79,7 +80,7 @@ const Header = () => {
                         <a
                             key={link.name}
                             href={link.href}
-                            className="text-gray-600 hover:text-primary font-medium py-2 border-b border-gray-50 last:border-0"
+                            className="text-gray-700 hover:text-primary font-medium py-2 border-b border-gray-50 last:border-0"
                             onClick={() => setIsMenuOpen(false)}
                         >
                             {link.name}

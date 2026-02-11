@@ -54,7 +54,7 @@ const AboutUs = () => {
                             Excelência e humanização em <span className="text-primary">cada atendimento.</span>
                         </h2>
 
-                        <p className="text-lg text-gray-600 leading-relaxed">
+                        <p className="text-lg text-gray-700 leading-relaxed">
                             Há mais de 10 anos, nossa clínica é referência em saúde na região. Unimos tecnologia de ponta com um corpo clínico acolhedor, focado em resolver o problema da sua família com rapidez e carinho.
                         </p>
 

@@ -48,7 +48,7 @@ const Hero = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.2 }}
-                            className="text-xl text-gray-600 leading-relaxed max-w-lg mx-auto lg:mx-0 font-light"
+                            className="text-xl text-gray-700 leading-relaxed max-w-lg mx-auto lg:mx-0 font-light"
                         >
                             Medicina de precisão com atendimento humanizado. A tecnologia dos grandes centros, perto de você.
                         </motion.p>
@@ -60,11 +60,11 @@ const Hero = () => {
                             transition={{ delay: 0.3 }}
                             className="flex flex-col w-full sm:flex-row items-center justify-center lg:justify-start gap-4"
                         >
-                            <button className="w-full sm:w-auto bg-blue-700 hover:bg-blue-800 text-white px-8 py-4 rounded-2xl font-semibold shadow-xl shadow-blue-700/20 transition-all hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-3 cursor-pointer">
+                            <button aria-label="Agendar Consulta" className="w-full sm:w-auto bg-blue-700 hover:bg-blue-800 text-white px-8 py-4 rounded-2xl font-semibold shadow-xl shadow-blue-700/20 transition-all hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-3 cursor-pointer">
                                 <ShieldCheck size={20} />
                                 Agendar Consulta
                             </button>
-                            <button className="w-full sm:w-auto px-8 py-4 rounded-2xl font-semibold text-gray-700 bg-white border border-gray-200 hover:bg-gray-50 hover:border-gray-300 transition-all flex items-center justify-center gap-2 group cursor-pointer">
+                            <button aria-label="Conhecer o Corpo Clínico" className="w-full sm:w-auto px-8 py-4 rounded-2xl font-semibold text-gray-700 bg-white border border-gray-200 hover:bg-gray-50 hover:border-gray-300 transition-all flex items-center justify-center gap-2 group cursor-pointer">
                                 Conhecer Corpo Clínico
                                 <ArrowRight size={18} className="text-gray-400 group-hover:translate-x-1 transition-transform" />
                             </button>
