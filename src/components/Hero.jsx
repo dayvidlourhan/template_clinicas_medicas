@@ -80,7 +80,7 @@ const Hero = () => {
                             <div className="flex -space-x-3">
                                 {[1, 2, 3, 4].map(i => (
                                     <div key={i} className="w-10 h-10 rounded-full border-2 border-white bg-gray-200 flex items-center justify-center text-xs overflow-hidden">
-                                        <img src={`https://i.pravatar.cc/100?img=${i + 10}`} alt="Patient" />
+                                        <img src={`https://i.pravatar.cc/100?img=${i + 10}`} alt="Patient" width="40" height="40" loading="lazy" decoding="async" />
                                     </div>
                                 ))}
                             </div>
@@ -106,9 +106,20 @@ const Hero = () => {
                     >
                         <div className="relative z-10 rounded-[2.5rem] overflow-hidden shadow-2xl shadow-blue-900/10 aspect-[4/5] lg:aspect-square">
                             <img
-                                src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=2664&auto=format&fit=crop"
+                                src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=1200&auto=format&fit=crop"
+                                srcSet="
+                                    https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=640&auto=format&fit=crop 640w,
+                                    https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=1024&auto=format&fit=crop 1024w,
+                                    https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=1600&auto=format&fit=crop 1600w
+                                "
+                                sizes="(max-width: 1024px) 100vw, 50vw"
                                 alt="Medical Team"
                                 className="w-full h-full object-cover object-center scale-105"
+                                width="800"
+                                height="800"
+                                loading="eager"
+                                fetchPriority="high"
+                                decoding="sync"
                             />
 
                             {/* Glass Badge - The "Premium" Detail */}

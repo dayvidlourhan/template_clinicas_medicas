@@ -12,9 +12,18 @@ const AboutUs = () => {
                         {/* Main Image Container */}
                         <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl shadow-blue-900/10 aspect-[4/3] group">
                             <img
-                                src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2653&auto=format&fit=crop"
+                                src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=1200&auto=format&fit=crop"
+                                srcSet="
+                                    https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=640&auto=format&fit=crop 640w,
+                                    https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=1200&auto=format&fit=crop 1200w
+                                "
+                                sizes="(max-width: 1024px) 100vw, 50vw"
                                 alt="Equipe da Clínica"
                                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                                width="800"
+                                height="600"
+                                loading="lazy"
+                                decoding="async"
                             />
                         </div>
 

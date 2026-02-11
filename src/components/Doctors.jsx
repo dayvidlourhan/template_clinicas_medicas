@@ -67,6 +67,9 @@ const Doctors = () => {
                                         alt={doctor.name}
                                         className="w-full h-full object-cover object-center transform group-hover:scale-110 transition-transform duration-700 ease-out"
                                         loading="lazy"
+                                        width="300"
+                                        height="300"
+                                        decoding="async"
                                     />
                                 </div>
                             </div>

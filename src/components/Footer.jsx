@@ -9,7 +9,7 @@ const Footer = () => {
                     {/* Col 1: Brand */}
                     <div className="flex flex-col items-start">
                         <div className="flex items-center gap-2 mb-4">
-                            <img src="/favicon.svg" alt="MedCare Logo" className="w-12 h-12 object-contain" />
+                            <img src="/favicon.svg" alt="MedCare Logo" className="w-12 h-12 object-contain" width="48" height="48" loading="lazy" decoding="async" />
                             <span className="text-2xl font-display font-bold text-white tracking-tight">
                                 Med<span className="text-blue-400">Care</span>
                             </span>
