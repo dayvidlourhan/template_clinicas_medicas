@@ -13,7 +13,7 @@ const Header = () => {
     ];
 
     return (
-        <header className="fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-md shadow-sm transition-all duration-300">
+        <header className="fixed top-0 left-0 w-full z-50 bg-white/95 md:bg-white/90 backdrop-blur-none md:backdrop-blur-md shadow-sm transition-all duration-300">
             {/* Top Bar - Optional Trust Builder */}
             <div className="hidden md:flex justify-between items-center px-6 lg:px-12 py-2 bg-gray-50 border-b border-gray-100 text-xs text-gray-600 font-medium">
                 <div className="flex gap-6">

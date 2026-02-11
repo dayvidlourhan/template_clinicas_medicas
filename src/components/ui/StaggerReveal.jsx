@@ -13,11 +13,10 @@ const container = {
 };
 
 const item = {
-    hidden: { opacity: 0, y: 20, filter: "blur(10px)" }, // Blur adds a 2026 touch
+    hidden: { opacity: 0, y: 20 }, // Removed blur for mobile performance
     show: {
         opacity: 1,
         y: 0,
-        filter: "blur(0px)",
         transition: { duration: 0.6, ease: "easeOut" },
     },
 };

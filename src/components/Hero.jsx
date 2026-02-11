@@ -6,8 +6,8 @@ import FloatingCard from './FloatingCard';
 const Hero = () => {
     return (
         <section id="inicio" className="relative pt-32 pb-40 lg:pt-48 lg:pb-56 z-20">
-            {/* Ambient Background Glows (The "Expensive" feel) */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            {/* Ambient Background Glows (The "Expensive" feel) - HIDDEN ON MOBILE */}
+            <div className="hidden md:block absolute inset-0 overflow-hidden pointer-events-none">
                 <div className="absolute top-[-20%] right-[-10%] w-[800px] h-[800px] bg-blue-400/10 rounded-full blur-[120px]" />
                 <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-indigo-400/10 rounded-full blur-[100px]" />
             </div>
@@ -36,7 +36,7 @@ const Hero = () => {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.1 }}
-                            className="text-3xl sm:text-4xl lg:text-7xl font-display font-bold text-gray-900 leading-[1.1] tracking-tight"
+                            className="text-3xl sm:text-4xl lg:text-7xl font-display font-bold text-gray-900 leading-[1.1] tracking-tight will-change-transform"
                         >
                             Saúde de elite para <br className="hidden lg:block" />
                             <span className="text-gradient relative inline-block">
@@ -122,8 +122,8 @@ const Hero = () => {
                                 decoding="sync"
                             />
 
-                            {/* Glass Badge - The "Premium" Detail */}
-                            <div className="absolute bottom-6 left-6 right-6 glass-panel p-5 rounded-2xl flex items-center gap-4">
+                            {/* Glass Badge - The "Premium" Detail - Solid on Mobile */}
+                            <div className="absolute bottom-6 left-6 right-6 bg-white/95 md:bg-white/70 md:backdrop-blur-md shadow-xl p-5 rounded-2xl flex items-center gap-4">
                                 <div className="bg-blue-600/10 p-3 rounded-xl text-blue-700">
                                     <Stethoscope size={28} />
                                 </div>
