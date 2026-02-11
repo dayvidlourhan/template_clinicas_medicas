@@ -36,7 +36,7 @@ const Hero = () => {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.1 }}
-                            className="text-5xl lg:text-7xl font-display font-bold text-gray-900 leading-[1.1] tracking-tight"
+                            className="text-3xl sm:text-4xl lg:text-7xl font-display font-bold text-gray-900 leading-[1.1] tracking-tight"
                         >
                             Saúde de elite para <br className="hidden lg:block" />
                             <span className="text-gradient relative inline-block">
@@ -58,7 +58,7 @@ const Hero = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.3 }}
-                            className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4"
+                            className="flex flex-col w-full sm:flex-row items-center justify-center lg:justify-start gap-4"
                         >
                             <button className="w-full sm:w-auto bg-blue-700 hover:bg-blue-800 text-white px-8 py-4 rounded-2xl font-semibold shadow-xl shadow-blue-700/20 transition-all hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-3 cursor-pointer">
                                 <ShieldCheck size={20} />
@@ -127,7 +127,7 @@ const Hero = () => {
             </div>
 
             {/* Floating Card Bridge */}
-            <div className="absolute bottom-0 left-0 w-full translate-y-1/2 z-30 px-4">
+            <div className="relative w-full px-4 mt-8 md:absolute md:bottom-0 md:left-0 md:translate-y-1/2 md:mt-0 z-30">
                 <div className="container mx-auto max-w-6xl">
                     <FloatingCard />
                 </div>

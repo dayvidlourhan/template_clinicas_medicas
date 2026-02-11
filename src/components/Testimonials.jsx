@@ -1,4 +1,5 @@
 import React from 'react';
+import { StaggerContainer, StaggerItem } from './ui/StaggerReveal';
 
 const testimonials = [
     {
@@ -37,9 +38,9 @@ const Testimonials = () => {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {testimonials.map((testimonial, index) => (
-                        <div
+                        <StaggerItem
                             key={index}
                             className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full border border-blue-50"
                         >
@@ -73,9 +74,9 @@ const Testimonials = () => {
                                     <div className="text-xs text-gray-400">Paciente Verificado</div>
                                 </div>
                             </div>
-                        </div>
+                        </StaggerItem>
                     ))}
-                </div>
+                </StaggerContainer>
             </div>
         </section>
     );

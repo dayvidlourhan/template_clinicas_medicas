@@ -39,7 +39,7 @@ const FloatingCard = () => {
                 <div
                     key={index}
                     className={`
-            p-8 flex flex-col gap-4 transition-all duration-300 relative overflow-hidden group
+            p-8 flex flex-col gap-4 transition-all duration-300 relative overflow-hidden group border-b md:border-b-0 md:border-r border-gray-100 last:border-0
             ${item.bgClass} 
             ${!item.isPrimary ? 'hover:bg-gray-50' : 'hover:bg-primary-dark'}
           `}
