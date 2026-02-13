@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { X, Star, MapPin, Send } from 'lucide-react';
+import { clinicConfig, getWhatsAppLink } from '../config/clinic';
 
 const ReviewModal = ({ isOpen, onClose }) => {
     if (!isOpen) return null;
@@ -26,11 +27,15 @@ const ReviewModal = ({ isOpen, onClose }) => {
 
     const handleFeedbackSubmit = (e) => {
         e.preventDefault();
-        // Here you would send the feedback to your backend
+
+        // 🚀 SMART FEATURE: Send negative feedback to SAC WhatsApp instead of losing it
+        const text = `⚠️ FEEDBACK DE MELHORIA (${rating} Estrelas):\n"${comment}"\n\nEnviado pelo site.`;
+        window.open(getWhatsAppLink(text), '_blank');
+
         setStep('success');
         setTimeout(() => {
             reset();
-        }, 3000);
+        }, 5000);
     };
 
     return (
@@ -85,7 +90,7 @@ const ReviewModal = ({ isOpen, onClose }) => {
                             </p>
 
                             <a
-                                href="https://maps.google.com" // Replace with actual Google Maps link
+                                href={clinicConfig.googleMapsLink}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 onClick={reset}
@@ -120,7 +125,7 @@ const ReviewModal = ({ isOpen, onClose }) => {
                                     className="w-full inline-flex items-center justify-center gap-2 px-8 py-3 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-bold shadow-lg transition-all"
                                 >
                                     <Send size={18} />
-                                    Enviar para a Gerência
+                                    Falar com a Gerência
                                 </button>
                             </form>
                         </div>
@@ -134,7 +139,7 @@ const ReviewModal = ({ isOpen, onClose }) => {
                             </div>
                             <h3 className="text-2xl font-bold text-[#1E3A8A] mb-2 font-display">Obrigado pelo feedback!</h3>
                             <p className="text-gray-500">
-                                Sua mensagem foi enviada diretamente para nossa gerência.
+                                Abrimos um canal direto no WhatsApp para resolver sua situação.
                             </p>
                         </div>
                     )}

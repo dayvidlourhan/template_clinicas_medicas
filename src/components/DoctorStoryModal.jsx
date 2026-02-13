@@ -1,6 +1,7 @@
 import React from 'react';
 import { X, Calendar } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { getWhatsAppLink } from '../config/clinic';
 
 const DoctorStoryModal = ({ isOpen, onClose, doctor }) => {
     if (!doctor) return null;
@@ -70,7 +71,7 @@ const DoctorStoryModal = ({ isOpen, onClose, doctor }) => {
                                 </p>
 
                                 <a
-                                    href={`https://wa.me/556299999999?text=Olá, gostaria de agendar uma consulta com ${doctor.name}`}
+                                    href={getWhatsAppLink(`Olá, gostaria de agendar uma consulta com ${doctor.name}`)}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="w-full bg-[#25D366] hover:bg-[#20bd5a] text-white py-4 rounded-xl font-bold text-lg shadow-lg shadow-green-900/20 active:scale-[0.98] transition-all flex items-center justify-center gap-2"

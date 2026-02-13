@@ -1,54 +1,62 @@
-import React from 'react';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import AboutUs from './components/AboutUs';
-import Specialties from './components/Specialties';
-import InstallmentSimulator from './components/InstallmentSimulator';
-import Doctors from './components/Doctors';
-import Testimonials from './components/Testimonials';
-import Footer from './components/Footer';
+import React, { Suspense, lazy } from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
-// Smart Features
-import Insurances from './components/Insurances';
-import FastCheckin from './components/FastCheckin';
+// Auth
+import { AuthProvider } from './context/AuthContext';
+import ProtectedRoute from './components/ProtectedRoute';
+import Login from './pages/Login';
 
+// Pages
+// Pages
+import LandingPage from './pages/LandingPage';
 import StickyCTA from './components/StickyCTA';
+
+// Admin Import (Lazy load for performance)
+const AdminLayout = lazy(() => import('./admin/AdminLayout'));
+const DashboardHome = lazy(() => import('./admin/DashboardHome'));
+const PatientsModule = lazy(() => import('./admin/PatientsModule'));
+const DoctorsModule = lazy(() => import('./admin/DoctorsModule'));
+const ReputationModule = lazy(() => import('./admin/ReputationModule'));
+const SettingsModule = lazy(() => import('./admin/SettingsModule'));
+
+// Fallback loader
+const LoadingFallback = () => (
+  <div className="flex items-center justify-center min-h-screen bg-gray-50">
+    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+  </div>
+);
 
 function App() {
   return (
-    <div className="min-h-screen bg-white font-sans antialiased text-gray-900 overflow-x-hidden pb-24 lg:pb-0">
-      <Header />
-      <main>
-        <Hero />
+    <AuthProvider>
+      <Router>
+        <Suspense fallback={<LoadingFallback />}>
+          <Routes>
+            {/* Public Website */}
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/login" element={<Login />} />
 
-        {/* Section 2: About Us */}
-        <AboutUs />
+            {/* Admin Panel (Protected) */}
+            <Route element={<ProtectedRoute />}>
+              <Route path="/admin" element={<AdminLayout />}>
+                <Route index element={<DashboardHome />} />
+                <Route path="pacientes" element={<PatientsModule />} />
+                <Route path="medicos" element={<DoctorsModule />} />
+                <Route path="avaliacoes" element={<ReputationModule />} />
+                <Route path="configuracoes" element={<SettingsModule />} />
+              </Route>
+            </Route>
 
-        {/* Section 3: Specialties */}
-        <Specialties />
+            {/* Fallback */}
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
 
-        {/* Feature 2: Treatment Installment Simulator */}
-        <InstallmentSimulator />
+          {/* Global Elements */}
+          <StickyCTA />
 
-        {/* Section 4: Our Doctors (Feature 1: Stories) */}
-        <Doctors />
-
-        {/* Section 5: Insurances (Smart Feature 4) */}
-        <Insurances />
-
-        {/* Section 6: Testimonials (Smart Feature 3) */}
-        <Testimonials />
-
-        {/* Section 7: Fast Check-in (Smart Feature 2) */}
-        <FastCheckin />
-      </main>
-
-      {/* Section 6: Footer */}
-      <Footer />
-
-      {/* Mobile Sticky CTA */}
-      <StickyCTA />
-    </div>
+        </Suspense>
+      </Router>
+    </AuthProvider>
   );
 }
 

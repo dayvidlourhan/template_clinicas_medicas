@@ -19,6 +19,47 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap"
     rel="stylesheet">
+
+  <!-- Local Business Schema -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalClinic",
+      "name": "MedCare",
+      "image": "https://images.unsplash.com/photo-1622253692010-333f2da6031d",
+      "telephone": "+5562999999999",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. T-4, 1234 - Bueno",
+        "addressLocality": "Goiânia",
+        "addressRegion": "GO",
+        "postalCode": "74000-000",
+        "addressCountry": "BR"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "08:00",
+          "closes": "18:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "08:00",
+          "closes": "12:00"
+        }
+      ],
+      "url": "https://medcare-goiania.com.br",
+      "priceRange": "$$"
+    }
+  </script>
 </head>
 
 <body>

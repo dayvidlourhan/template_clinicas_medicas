@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Search } from 'lucide-react';
 import { StaggerContainer, StaggerItem } from './ui/StaggerReveal';
+import { getWhatsAppLink } from '../config/clinic';
 
 const Insurances = () => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -73,8 +74,12 @@ const Insurances = () => {
                         <p className="text-gray-500 mb-6">
                             Atendemos particular com valor social e ofertas especiais.
                         </p>
+
+
+
+
                         <a
-                            href="https://wa.me/556299999999?text=Olá, não achei meu convênio na lista."
+                            href={getWhatsAppLink("Olá, não achei meu convênio na lista da busca.")}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold shadow-lg shadow-green-500/20 transition-all"

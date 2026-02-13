@@ -1,35 +1,36 @@
 import React from 'react';
-import { X, Calendar, DollarSign, FileText, ChevronRight } from 'lucide-react';
+import { X, Calendar, FileText, Stethoscope, ChevronRight } from 'lucide-react';
+import { getWhatsAppLink } from '../config/clinic';
 
 const WhatsAppModal = ({ isOpen, onClose }) => {
     if (!isOpen) return null;
-
-    const phoneNumber = "556299999999"; // Replace with actual number
 
     const options = [
         {
             icon: <Calendar size={24} />,
             label: "Agendar Consulta",
             text: "Olá, gostaria de agendar uma consulta.",
-            color: "bg-blue-100 text-blue-600"
-        },
-        {
-            icon: <DollarSign size={24} />,
-            label: "Valores e Convênios",
-            text: "Olá, gostaria de saber valores e convênios.",
-            color: "bg-green-100 text-green-600"
+            color: "bg-blue-100 text-blue-600",
+            sub: "Resposta em ~5 min"
         },
         {
             icon: <FileText size={24} />,
+            label: "Valores e Convênios",
+            text: "Olá, gostaria de saber sobre valores e convênios atendidos.",
+            color: "bg-green-100 text-green-600",
+            sub: "Tabela atualizada"
+        },
+        {
+            icon: <Stethoscope size={24} />,
             label: "Resultado de Exames",
-            text: "Olá, estou aguardando resultados.",
-            color: "bg-purple-100 text-purple-600"
+            text: "Olá, gostaria de verificar o resultado dos meus exames.",
+            color: "bg-purple-100 text-purple-600",
+            sub: "Portal do Paciente"
         }
     ];
 
-    const handleOptionClick = (text) => {
-        const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
-        window.open(url, '_blank');
+    const handleOptionClick = (message) => {
+        window.open(getWhatsAppLink(message), '_blank');
         onClose();
     };
 
