@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StaggerContainer, StaggerItem } from './ui/StaggerReveal';
+import ReviewModal from './ReviewModal';
 
 const testimonials = [
     {
@@ -23,6 +24,7 @@ const testimonials = [
 ];
 
 const Testimonials = () => {
+    const [isReviewModalOpen, setIsReviewModalOpen] = useState(false);
     return (
         <section id="testimonials" className="py-20 bg-[#EFF6FF]">
             <div className="container mx-auto px-4 md:px-6">
@@ -77,7 +79,18 @@ const Testimonials = () => {
                         </StaggerItem>
                     ))}
                 </StaggerContainer>
+
+                <div className="mt-16 text-center">
+                    <button
+                        onClick={() => setIsReviewModalOpen(true)}
+                        className="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-blue-100 text-blue-800 font-bold hover:bg-blue-200 transition-all transform hover:scale-105 shadow-md hover:shadow-lg"
+                    >
+                        Avalie sua Experiência
+                    </button>
+                </div>
             </div>
+
+            <ReviewModal isOpen={isReviewModalOpen} onClose={() => setIsReviewModalOpen(false)} />
         </section>
     );
 };

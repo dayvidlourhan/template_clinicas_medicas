@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StaggerContainer, StaggerItem } from './ui/StaggerReveal';
+import { Play } from 'lucide-react';
+import DoctorStoryModal from './DoctorStoryModal';
 
 const doctors = [
     {
@@ -29,6 +31,8 @@ const doctors = [
 ];
 
 const Doctors = () => {
+    const [selectedDoctor, setSelectedDoctor] = useState(null);
+
     return (
         <section id="doctors" className="py-20 bg-white overflow-hidden">
             <div className="container mx-auto px-4 md:px-6">
@@ -40,7 +44,7 @@ const Doctors = () => {
                         Nosso Corpo Clínico
                     </h2>
                     <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-                        Médicos experientes prontos para cuidar de você.
+                        Médicos experientes e histórias reais. Clique para conhecer.
                     </p>
                 </div>
 
@@ -49,19 +53,12 @@ const Doctors = () => {
                         <StaggerItem key={index} className="flex flex-col items-center group relative z-10">
 
                             {/* Doctor Image Container with decorative background shapes */}
-                            <div className="relative mb-6">
-                                {/* Decorative Square (Rotated) */}
-                                <div className="absolute top-4 -right-4 w-full h-full border-2 border-blue-100 rounded-2xl -z-10 group-hover:rotate-6 transition-transform duration-500"></div>
+                            {/* Doctor Image Container with decorative background shapes */}
+                            <div className="relative mb-6 cursor-pointer" onClick={() => setSelectedDoctor(doctor)}>
+                                {/* Gradient Ring Animation */}
+                                <div className="absolute -inset-1 rounded-full bg-gradient-to-tr from-blue-400 via-cyan-400 to-blue-600 opacity-75 blur-sm animate-pulse group-hover:opacity-100 transition-opacity duration-500"></div>
 
-                                {/* Decorative Dots */}
-                                <div className="absolute -bottom-4 -left-4 w-16 h-16 opacity-30 -z-10">
-                                    <div className="w-full h-full bg-[radial-gradient(#3B82F6_1px,transparent_1px)] [background-size:6px_6px]"></div>
-                                </div>
-
-                                {/* Decorative Circle Blur (Subtle Glow) */}
-                                <div className="absolute top-0 left-0 w-full h-full bg-blue-100 rounded-full blur-2xl opacity-0 group-hover:opacity-40 transition-opacity duration-500 -z-10"></div>
-
-                                <div className="w-64 h-64 md:w-full md:aspect-square overflow-hidden rounded-2xl shadow-sm transition-all duration-300 bg-gray-50 card-premium-hover">
+                                <div className="relative w-64 h-64 md:w-full md:aspect-square overflow-hidden rounded-full border-4 border-white shadow-xl transition-all duration-300 group-hover:scale-[1.02]">
                                     <img
                                         src={doctor.image}
                                         alt={doctor.name}
@@ -71,6 +68,13 @@ const Doctors = () => {
                                         height="300"
                                         decoding="async"
                                     />
+                                    {/* Play Overlay */}
+                                    <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-300"></div>
+                                </div>
+
+                                {/* Play Button Badge */}
+                                <div className="absolute bottom-2 right-2 md:bottom-4 md:right-4 z-20 bg-white text-blue-600 w-12 h-12 rounded-full flex items-center justify-center shadow-lg border-2 border-blue-50 transform group-hover:scale-110 transition-transform duration-300">
+                                    <Play size={20} fill="currentColor" className="ml-1" />
                                 </div>
                             </div>
 
@@ -88,6 +92,12 @@ const Doctors = () => {
                     ))}
                 </StaggerContainer>
             </div>
+
+            <DoctorStoryModal
+                isOpen={!!selectedDoctor}
+                onClose={() => setSelectedDoctor(null)}
+                doctor={selectedDoctor}
+            />
         </section>
     );
 };
