@@ -193,7 +193,7 @@ const FastCheckin = () => {
                                         <option value="Exames de Rotina">Agendar Exames</option>
                                         <option value="Retorno Médico">Marcar Retorno</option>
                                         <option value="Renovar Receita">Renovar Receita</option>
-                                        <option value="Dúvida sobre Convênio">Dúvida sobre Convênio/Valor</option>
+                                        <option value="Dúvida sobre Convênio">Dúvida sobre Convênios</option>
                                         <option value="Outro">Outro Motivo</option>
                                     </select>
                                     <div className="absolute inset-y-0 right-0 flex items-center pr-5 pointer-events-none text-gray-500">

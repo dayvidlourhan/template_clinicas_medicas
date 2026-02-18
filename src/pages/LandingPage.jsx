@@ -3,7 +3,6 @@ import Header from '../components/Header';
 import Hero from '../components/Hero';
 import AboutUs from '../components/AboutUs';
 import Specialties from '../components/Specialties';
-import InstallmentSimulator from '../components/InstallmentSimulator';
 import Doctors from '../components/Doctors';
 import Testimonials from '../components/Testimonials';
 import Footer from '../components/Footer';
@@ -25,9 +24,6 @@ function LandingPage() {
 
                 {/* Section 3: Specialties */}
                 <Specialties />
-
-                {/* Feature 2: Treatment Installment Simulator */}
-                <InstallmentSimulator />
 
                 {/* Section 4: Our Doctors (Feature 1: Stories) */}
                 <Doctors />

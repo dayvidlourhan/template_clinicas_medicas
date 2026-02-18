@@ -15,10 +15,10 @@ const WhatsAppModal = ({ isOpen, onClose }) => {
         },
         {
             icon: <FileText size={24} />,
-            label: "Valores e Convênios",
-            text: "Olá, gostaria de saber sobre valores e convênios atendidos.",
+            label: "Convênios e Planos",
+            text: "Olá, gostaria de saber sobre os convênios atendidos.",
             color: "bg-green-100 text-green-600",
-            sub: "Tabela atualizada"
+            sub: "Lista de 2026"
         },
         {
             icon: <Stethoscope size={24} />,
@@ -65,7 +65,7 @@ const WhatsAppModal = ({ isOpen, onClose }) => {
                                     {option.label}
                                 </span>
                                 <span className="text-xs text-gray-500 group-hover:text-blue-600/70">
-                                    {index === 0 ? 'Resposta em ~2 min' : index === 1 ? 'Tabela 2026 atualizada' : 'Acesse agora'}
+                                    {index === 0 ? 'Resposta em ~2 min' : index === 1 ? 'Lista 2026 atualizada' : 'Acesse agora'}
                                 </span>
                             </div>
                             <div className="text-gray-300 group-hover:text-blue-500 group-hover:translate-x-1 transition-all">

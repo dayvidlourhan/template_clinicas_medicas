@@ -7,14 +7,14 @@ const Insurances = () => {
     const [searchTerm, setSearchTerm] = useState('');
 
     const insurances = [
-        { name: "Unimed", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Unimed_logo.svg/2560px-Unimed_logo.svg.png" },
+        { name: "Unimed Belém", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Unimed_logo.svg/2560px-Unimed_logo.svg.png" },
+        { name: "Hapvida", logo: "https://logodownload.org/wp-content/uploads/2017/09/hapvida-logo.png" },
+        { name: "PASA (Vale)", logo: "https://images.tcdn.com.br/img/img_prod/704764/90_1_20190822165935.png" }, // Generic PASA placeholder ref
         { name: "Bradesco Saúde", logo: "https://logodownload.org/wp-content/uploads/2019/08/bradesco-saude-logo.png" },
         { name: "Amil", logo: "https://logodownload.org/wp-content/uploads/2016/09/amil-logo.png" },
+        { name: "Iasep", logo: "https://www.iasep.pa.gov.br/sites/default/files/logo_iasep_0.png" }, // Iasep PA
         { name: "SulAmérica", logo: "https://logodownload.org/wp-content/uploads/2017/09/sulamerica-logo.png" },
-        { name: "Ipasgo", logo: "https://logodownload.org/wp-content/uploads/2021/10/ipasgo-logo.png" },
-        { name: "Cassi", logo: "https://logodownload.org/wp-content/uploads/2021/03/cassi-logo.png" }, // Placeholder for generic
-        { name: "Porto Seguro", logo: "https://logodownload.org/wp-content/uploads/2014/05/porto-seguro-logo.png" },
-        { name: "Hapvida", logo: "https://logodownload.org/wp-content/uploads/2017/09/hapvida-logo.png" },
+        { name: "Cassi", logo: "https://logodownload.org/wp-content/uploads/2021/03/cassi-logo.png" },
     ];
 
     const filteredInsurances = insurances.filter(ins =>
@@ -72,7 +72,7 @@ const Insurances = () => {
                         </div>
                         <h3 className="text-xl font-bold text-gray-900 mb-2">Não encontrou?</h3>
                         <p className="text-gray-500 mb-6">
-                            Atendemos particular com valor social e ofertas especiais.
+                            Atendemos particular e diversos convênios. Entre em contato para saber mais.
                         </p>
 
 
