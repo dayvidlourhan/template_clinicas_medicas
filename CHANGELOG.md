@@ -2,6 +2,15 @@
 
 Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 
+## [Unreleased] - 2026-02-23
+
+### Corrigido
+- Desalinhamento do botão "Chamar no WhatsApp" no componente de Check-in rápido.
+- Ajuste de layout de texto para evitar quebras irregulares em dispositivos móveis.
+
+### Alterado
+- Design do botão CTA para visual Premium com gradiente e hierarquia de texto melhorada.
+
 ## [Unreleased] - 2026-02-18
 
 ### Removido

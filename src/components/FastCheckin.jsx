@@ -104,10 +104,15 @@ const FastCheckin = () => {
                 );
             default:
                 return (
-                    <>
-                        <Send size={22} className="group-hover:translate-x-1 transition-transform stroke-[3px]" />
-                        Chamar no WhatsApp Agora
-                    </>
+                    <div className="flex items-center gap-3 text-left">
+                        <div className="bg-white/20 p-2 rounded-full group-hover:bg-white/30 transition-colors shrink-0">
+                            <Send size={22} className="group-hover:rotate-12 transition-transform" />
+                        </div>
+                        <div className="flex flex-col justify-center">
+                            <span className="text-lg md:text-xl font-black uppercase leading-none tracking-tight">Chamar no WhatsApp</span>
+                            <span className="text-[10px] md:text-xs opacity-90 font-bold uppercase tracking-widest mt-1">Atendimento Prioritário Agora</span>
+                        </div>
+                    </div>
                 );
         }
     };
@@ -115,7 +120,7 @@ const FastCheckin = () => {
     const getButtonStyles = () => {
         if (status === 'success') return 'bg-green-600 hover:bg-green-700 shadow-green-600/30 scale-[1.02]';
         if (status !== 'idle') return 'bg-blue-600 hover:bg-blue-700 shadow-blue-600/30 cursor-wait opacity-90';
-        return 'bg-[#25D366] hover:bg-[#1ebc57] shadow-green-500/25 hover:shadow-green-600/30';
+        return 'bg-gradient-to-r from-[#25D366] to-[#1ebc57] hover:shadow-green-500/40';
     };
 
     return (
@@ -225,11 +230,11 @@ const FastCheckin = () => {
                         <button
                             type="submit"
                             disabled={status !== 'idle'}
-                            className={`w-full mt-6 text-white font-extrabold text-xl py-5 rounded-2xl shadow-xl active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-3 group relative overflow-hidden disabled:cursor-not-allowed ${getButtonStyles()}`}
+                            className={`w-full mt-6 text-white py-4 rounded-2xl shadow-xl active:scale-[0.98] transition-all duration-300 flex items-center justify-center group relative overflow-hidden disabled:cursor-not-allowed ${getButtonStyles()}`}
                         >
-                            <span className="relative z-10 flex items-center gap-2">
+                            <div className="relative z-10">
                                 {getButtonContent()}
-                            </span>
+                            </div>
                             {/* Shine effect */}
                             {status === 'idle' && (
                                 <div className="absolute top-0 -left-[100%] w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-[-20deg] group-hover:animate-shine" />

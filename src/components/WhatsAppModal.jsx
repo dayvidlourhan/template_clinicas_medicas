@@ -69,7 +69,7 @@ const WhatsAppModal = ({ isOpen, onClose }) => {
                                 </span>
                             </div>
                             <div className="text-gray-300 group-hover:text-blue-500 group-hover:translate-x-1 transition-all">
-                                <ChevronRight size={20} a />
+                                <ChevronRight size={20} />
                             </div>
                         </button>
                     ))}
