@@ -10,6 +10,7 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 
 ### Alterado
 - Design do botão CTA para visual Premium com gradiente e hierarquia de texto melhorada.
+- Substituído ícone genérico de avião pelo ícone oficial do WhatsApp para melhor intuitividade.
 
 ## [Unreleased] - 2026-02-18
 
